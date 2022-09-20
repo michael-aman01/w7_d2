@@ -6606,3 +6606,1831 @@ Started GET "/sessions/styles.css" for ::1 at 2022-09-20 12:35:30 -0700
   
 ActionController::RoutingError (No route matches [GET] "/sessions/styles.css"):
   
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4505726345591715405)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBand (20220920201152)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4505726345591715405)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4505726345591715405)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBand (20220920201152)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (66.7ms)[0m  [1m[35mCREATE TABLE "bands" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220920201152"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4505726345591715405)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBand Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mBand Create (0.7ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", "2022-09-20 20:25:09.053526"], ["updated_at", "2022-09-20 20:25:09.053526"]]
+  [1m[36mTRANSACTION (58.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBand Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/bands" for ::1 at 2022-09-20 13:25:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/michael/Desktop/project/w7_d2/music_app/app/controllers/bands_controller.rb:46: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/bands_controller.rb:46: syntax error, unexpected `end', expecting end-of-input
+app/controllers/bands_controller.rb:46: syntax error, unexpected `end', expecting end-of-input
+Started GET "/bands" for ::1 at 2022-09-20 13:26:24 -0700
+Processing by BandsController#index as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}}
+  [1m[36mBand Load (1.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/controllers/bands_controller.rb:6:in `index'
+Completed 200 OK in 44ms (Views: 21.2ms | ActiveRecord: 16.8ms | Allocations: 5788)
+
+
+Started POST "/bands?band[name]=%22new%20band%22" for ::1 at 2022-09-20 13:26:50 -0700
+Processing by BandsController#create as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "band"=>{"name"=>"\"new band\""}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 212)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/bands" for ::1 at 2022-09-20 13:27:02 -0700
+Processing by BandsController#index as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}}
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/controllers/bands_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 946)
+
+
+Started GET "/band/1" for ::1 at 2022-09-20 13:27:29 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/band/1"):
+  
+Started GET "/band?id=1" for ::1 at 2022-09-20 13:27:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/band"):
+  
+Started GET "/bands?id=1" for ::1 at 2022-09-20 13:28:32 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "id"=>"1"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/controllers/bands_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 10.3ms | ActiveRecord: 5.4ms | Allocations: 5798)
+
+
+Started DELETE "/bands?id=1" for ::1 at 2022-09-20 13:30:17 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/bands"):
+  
+Started DELETE "/bands/1" for ::1 at 2022-09-20 13:31:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#destroy as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 332)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/bands/1" for ::1 at 2022-09-20 13:35:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#destroy as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 871)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:46:in `band_params'
+app/controllers/bands_controller.rb:41:in `set_band'
+Started DELETE "/bands?id=1" for ::1 at 2022-09-20 13:35:35 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/bands"):
+  
+Started DELETE "/bands/1" for ::1 at 2022-09-20 13:36:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#destroy as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 869)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:46:in `band_params'
+app/controllers/bands_controller.rb:41:in `set_band'
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+Started GET "/bands" for ::1 at 2022-09-20 13:38:10 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as HTML
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/controllers/bands_controller.rb:6:in `index'
+Completed 200 OK in 34ms (Views: 14.5ms | ActiveRecord: 12.0ms | Allocations: 5791)
+
+
+Started GET "/bands/new" for ::1 at 2022-09-20 13:38:18 -0700
+Processing by BandsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 919)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 6887)
+Completed 200 OK in 45ms (Views: 37.4ms | ActiveRecord: 3.4ms | Allocations: 9130)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 13:38:18 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 163)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:46:in `band_params'
+app/controllers/bands_controller.rb:41:in `set_band'
+Started POST "/users" for ::1 at 2022-09-20 13:38:24 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.6ms | Allocations: 1390)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:30:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2022-09-20 13:39:35 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 13ms (ActiveRecord: 1.7ms | Allocations: 2836)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:30:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2022-09-20 13:40:17 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.3ms | Allocations: 1042)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:30:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started GET "/bands" for ::1 at 2022-09-20 13:43:54 -0700
+Processing by BandsController#index as HTML
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/controllers/bands_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 4.0ms | Allocations: 3200)
+
+
+Started GET "/bands/1" for ::1 at 2022-09-20 13:43:59 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:46:in `band_params'
+app/controllers/bands_controller.rb:41:in `set_band'
+Started GET "/bands/new" for ::1 at 2022-09-20 13:44:48 -0700
+Processing by BandsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 325)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3544)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 1.9ms | Allocations: 4095)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 13:44:48 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 138)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:46:in `band_params'
+app/controllers/bands_controller.rb:41:in `set_band'
+Started POST "/users" for ::1 at 2022-09-20 13:44:51 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.5ms | Allocations: 1333)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:31:in `user_params'
+app/controllers/users_controller.rb:20:in `create'
+Started GET "/bands/new" for ::1 at 2022-09-20 13:46:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 933)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 6951)
+Completed 200 OK in 57ms (Views: 37.1ms | ActiveRecord: 8.7ms | Allocations: 13661)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 13:46:14 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 163)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:48:in `band_params'
+app/controllers/bands_controller.rb:43:in `set_band'
+Started GET "/bands/new" for ::1 at 2022-09-20 13:46:17 -0700
+Processing by BandsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 233)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2056)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 2402)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 13:46:17 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 126)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:48:in `band_params'
+app/controllers/bands_controller.rb:43:in `set_band'
+Started POST "/users" for ::1 at 2022-09-20 13:46:20 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.3ms | Allocations: 1417)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:31:in `user_params'
+app/controllers/users_controller.rb:20:in `create'
+Started GET "/users" for ::1 at 2022-09-20 13:47:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/users" for ::1 at 2022-09-20 13:47:10 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 13ms (ActiveRecord: 2.2ms | Allocations: 2863)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:31:in `user_params'
+app/controllers/users_controller.rb:20:in `create'
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 13:47:17 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 591)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:48:in `band_params'
+app/controllers/bands_controller.rb:43:in `set_band'
+Started POST "/users" for ::1 at 2022-09-20 13:48:39 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 20ms (ActiveRecord: 5.4ms | Allocations: 4210)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:31:in `user_params'
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for ::1 at 2022-09-20 13:49:15 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 11ms (ActiveRecord: 2.5ms | Allocations: 2887)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:31:in `user_params'
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for ::1 at 2022-09-20 13:50:46 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 10ms (ActiveRecord: 1.4ms | Allocations: 2874)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:31:in `user_params'
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for ::1 at 2022-09-20 13:50:53 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 400 Bad Request in 10ms (ActiveRecord: 0.6ms | Allocations: 1067)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:31:in `user_params'
+app/controllers/users_controller.rb:20:in `create'
+Started GET "/bands/new" for ::1 at 2022-09-20 13:52:47 -0700
+Processing by BandsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 526)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 3557)
+Completed 200 OK in 34ms (Views: 21.3ms | ActiveRecord: 3.2ms | Allocations: 8555)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 13:52:48 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3048)
+
+
+  
+NameError (undefined local variable or method `band_params' for #<BandsController:0x00000000008430>
+
+        @band = Band.find_by_name(band_params)
+                                  ^^^^^^^^^^^
+Did you mean?  band_path):
+  
+app/controllers/bands_controller.rb:43:in `set_band'
+Started POST "/bands" for ::1 at 2022-09-20 13:52:54 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/bands_controller.rb:10:in `create'
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 13:53:16 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 785)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:48:in `band_params'
+app/controllers/bands_controller.rb:43:in `set_band'
+Started POST "/bands" for ::1 at 2022-09-20 13:53:17 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:48:in `band_params'
+app/controllers/bands_controller.rb:10:in `create'
+Started POST "/bands" for ::1 at 2022-09-20 13:54:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 1401)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/bands_controller.rb:48:in `band_params'
+app/controllers/bands_controller.rb:10:in `create'
+Started POST "/bands" for ::1 at 2022-09-20 13:56:05 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "test 2"], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Create (0.4ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test 2"], ["created_at", "2022-09-20 20:56:05.978618"], ["updated_at", "2022-09-20 20:56:05.978618"]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Redirected to http://localhost:3000/bands/2
+Completed 302 Found in 35ms (ActiveRecord: 8.7ms | Allocations: 9126)
+
+
+Started GET "/bands/2" for ::1 at 2022-09-20 13:56:05 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3079)
+
+
+  
+NameError (undefined local variable or method `band_params' for #<BandsController:0x00000000005de8>
+
+        @band = Band.find_by_name(band_params)
+                                  ^^^^^^^^^^^
+Did you mean?  band_path):
+  
+app/controllers/bands_controller.rb:43:in `set_band'
+Started POST "/bands" for ::1 at 2022-09-20 13:56:27 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 2"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "test 2"], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 4.9ms | Allocations: 7373)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 13:56:33 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 3"}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "test 3"], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Create (1.3ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test 3"], ["created_at", "2022-09-20 20:56:33.191181"], ["updated_at", "2022-09-20 20:56:33.191181"]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Redirected to http://localhost:3000/bands/3
+Completed 302 Found in 37ms (ActiveRecord: 11.3ms | Allocations: 3123)
+
+
+Started GET "/bands/3" for ::1 at 2022-09-20 13:56:33 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1072)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+        @band = Band.find_by_name(params[:band][:name])
+                                               ^^^^^^^):
+  
+app/controllers/bands_controller.rb:43:in `set_band'
+Started POST "/bands" for ::1 at 2022-09-20 13:57:31 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 4"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "test 4"], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Create (0.5ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test 4"], ["created_at", "2022-09-20 20:57:31.194260"], ["updated_at", "2022-09-20 20:57:31.194260"]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Redirected to http://localhost:3000/bands/4
+Completed 302 Found in 28ms (ActiveRecord: 7.3ms | Allocations: 5620)
+
+
+Started GET "/bands/4" for ::1 at 2022-09-20 13:57:31 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:43:in `set_band'
+Completed 200 OK in 11ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 1095)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 13:57:38 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 5"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "test 5"], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Create (0.4ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test 5"], ["created_at", "2022-09-20 20:57:38.399332"], ["updated_at", "2022-09-20 20:57:38.399332"]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (23.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Redirected to http://localhost:3000/bands/5
+Completed 302 Found in 38ms (ActiveRecord: 24.6ms | Allocations: 2970)
+
+
+Started GET "/bands/5" for ::1 at 2022-09-20 13:57:38 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:43:in `set_band'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 640)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 13:58:35 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "band"=>{"name"=>"test 6"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "test 6"], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Create (0.4ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test 6"], ["created_at", "2022-09-20 20:58:35.227398"], ["updated_at", "2022-09-20 20:58:35.227398"]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 44ms (ActiveRecord: 19.2ms | Allocations: 5582)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 13:58:35 -0700
+Processing by BandsController#index as HTML
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/controllers/bands_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1302)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:00:33 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2200)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 5462)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 4.1ms | Allocations: 7103)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:00:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 14:06:39 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 8.4ms | Allocations: 694)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 37.5ms | Allocations: 6121)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 9195)
+Completed 200 OK in 55ms (Views: 39.1ms | ActiveRecord: 12.8ms | Allocations: 12378)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:06:39 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 14:07:42 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 0.9ms | Allocations: 400)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1951)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 3218)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.7ms | Allocations: 3982)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:07:42 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started POST "/bands" for ::1 at 2022-09-20 14:08:12 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1904)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+        @band = Band.new(name: params[:band][:name])
+                                            ^^^^^^^):
+  
+app/controllers/bands_controller.rb:10:in `create'
+Started GET "/bands" for ::1 at 2022-09-20 14:09:08 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.1ms | Allocations: 481)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3473)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4750)
+Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 4.6ms | Allocations: 5692)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:09:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started POST "/bands" for ::1 at 2022-09-20 14:09:10 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1062)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+        @band = Band.new(name: params[:band][:name])
+                                            ^^^^^^^):
+  
+app/controllers/bands_controller.rb:10:in `create'
+Started POST "/bands" for ::1 at 2022-09-20 14:10:47 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 5.0ms | Allocations: 8118)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:10:48 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 3.0ms | Allocations: 412)
+  Rendered bands/_delete_button.html.erb (Duration: 0.7ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 1983)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 3260)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.7ms | Allocations: 4005)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:10:50 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 2797)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:10:51 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.6ms | Allocations: 225)
+  Rendered bands/_delete_button.html.erb (Duration: 0.8ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.7ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 1.0ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 1.2ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.9ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1427)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 2367)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.8ms | Allocations: 2588)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:10:56 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 2640)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:12:40 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 6.6ms | Allocations: 742)
+  Rendered bands/_delete_button.html.erb (Duration: 1.0ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 1.3ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.8ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 1.1ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 39.7ms | Allocations: 6265)
+  Rendered layout layouts/application.html.erb (Duration: 52.4ms | Allocations: 9338)
+Completed 200 OK in 65ms (Views: 55.1ms | ActiveRecord: 6.4ms | Allocations: 12521)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:12:41 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 1.5ms | Allocations: 5975)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:12:44 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 0.9ms | Allocations: 302)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.9ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.7ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1646)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 2698)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.6ms | Allocations: 2958)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:12:45 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 2713)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:13:49 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 2.6ms | Allocations: 232)
+  Rendered bands/_delete_button.html.erb (Duration: 0.7ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1523)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 2464)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.6ms | Allocations: 2681)
+
+
+Started DELETE "/bands/1" for ::1 at 2022-09-20 14:15:16 -0700
+Processing by BandsController#destroy as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms | Allocations: 193)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/bands/1" for ::1 at 2022-09-20 14:16:31 -0700
+Processing by BandsController#destroy as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms | Allocations: 136)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/bands/1" for ::1 at 2022-09-20 14:16:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#destroy as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "id"=>"1"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:43:in `set_band'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:34:in `destroy'
+  [1m[36mBand Destroy (2.5ms)[0m  [1m[31mDELETE FROM "bands" WHERE "bands"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/bands_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:34:in `destroy'
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 37ms (ActiveRecord: 10.6ms | Allocations: 8097)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:16:56 -0700
+Processing by BandsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 8.6ms | Allocations: 552)
+  Rendered bands/_delete_button.html.erb (Duration: 1.0ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 1.5ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 2393)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 5450)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.3ms | Allocations: 7725)
+
+
+Started DELETE "/bands/2" for ::1 at 2022-09-20 14:17:17 -0700
+Processing by BandsController#destroy as */*
+  Parameters: {"flower"=>{"flower_type"=>"\"iris\"", "garden_id"=>"1", "gardener_id"=>"1"}, "id"=>"2"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:43:in `set_band'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:34:in `destroy'
+  [1m[36mBand Destroy (0.6ms)[0m  [1m[31mDELETE FROM "bands" WHERE "bands"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/bands_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (59.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:34:in `destroy'
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 69ms (ActiveRecord: 60.4ms | Allocations: 2139)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:17:17 -0700
+Processing by BandsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.6ms | Allocations: 261)
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1281)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2223)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 2466)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:17:38 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 4970)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:17:41 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.9ms | Allocations: 312)
+  Rendered bands/_delete_button.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 1359)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 2408)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.8ms | Allocations: 2645)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:17:45 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 5.3ms | Allocations: 2443)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:17:47 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 3.0ms | Allocations: 238)
+  Rendered bands/_delete_button.html.erb (Duration: 1.0ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1265)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 2206)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 1.3ms | Allocations: 2415)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:18:11 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 2440)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:18:16 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 2.5ms | Allocations: 400)
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1708)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 2975)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 1.1ms | Allocations: 3656)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:19:40 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 16ms (Views: 1.3ms | ActiveRecord: 1.5ms | Allocations: 2575)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:19:42 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 4.5ms | Allocations: 1646)
+  Rendered bands/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2654)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2739)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms | Allocations: 3434)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <form action="<%= bands_url %>" method="POST" name="<%= @band.name %>">
+    2: <input type="hidden" name="_method" method="DELETE">
+    3: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    4: 
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:19:51 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.7ms | Allocations: 759)
+  Rendered bands/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1469)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1548)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 1769)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <form action="<%= bands_url %>" method="POST" name="<%= @band.name %>">
+    2: <input type="hidden" name="_method" method="DELETE">
+    3: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    4: 
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:19:51 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 2.1ms | Allocations: 729)
+  Rendered bands/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1376)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 1455)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms | Allocations: 1640)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <form action="<%= bands_url %>" method="POST" name="<%= @band.name %>">
+    2: <input type="hidden" name="_method" method="DELETE">
+    3: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    4: 
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:20:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 5.3ms | Allocations: 1742)
+  Rendered bands/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 6627)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 6723)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 5.5ms | Allocations: 9850)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <form action="<%= bands_url %>" method="POST" name="<%= @band.name %>">
+    2: <input type="hidden" name="_method" method="DELETE">
+    3: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    4: 
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:21:00 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 2.4ms | Allocations: 759)
+  Rendered bands/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1479)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1559)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 1797)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <form action="<%= bands_url %>" method="POST" name="<%= @band.name %>">
+    2: <input type="hidden" name="_method" method="DELETE">
+    3: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    4: 
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:22:07 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 2.0ms | Allocations: 449)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1766)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 4813)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.3ms | Allocations: 5560)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:22:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started POST "/bands" for ::1 at 2022-09-20 14:22:37 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 5943)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:22:38 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 2.7ms | Allocations: 482)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered bands/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1856)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3123)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.4ms | Allocations: 3840)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:23:40 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 3.5ms | Allocations: 5324)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:23:41 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.9ms | Allocations: 431)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1775)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3052)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.4ms | Allocations: 3793)
+
+
+Started POST "/bands" for ::1 at 2022-09-20 14:24:20 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mBand Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" WHERE "bands"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/bands_controller.rb:11:in `create'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 2782)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 14:24:21 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 2.8ms | Allocations: 889)
+  Rendered bands/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 1882)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 1967)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms | Allocations: 2645)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <form action="<%= bands_url %>" method="POST" name="<%= @band.name %>">
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" method="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/band/1" for ::1 at 2022-09-20 14:24:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/band/1"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 14:24:35 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.6ms | Allocations: 729)
+  Rendered bands/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1376)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 1455)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms | Allocations: 1669)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <form action="<%= bands_url %>" method="POST" name="<%= @band.name %>">
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" method="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:26:12 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 5.1ms | Allocations: 435)
+  Rendered bands/_delete_button.html.erb (Duration: 1.0ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.7ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 24.7ms | Allocations: 3089)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 4367)
+Completed 200 OK in 32ms (Views: 25.1ms | ActiveRecord: 5.7ms | Allocations: 5960)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:26:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started DELETE "/bands" for ::1 at 2022-09-20 14:26:13 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/bands"):
+  
+Started DELETE "/bands" for ::1 at 2022-09-20 14:26:31 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/bands"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 14:27:40 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 5.4ms | Allocations: 1145)
+  Rendered bands/index.html.erb within layouts/application (Duration: 31.1ms | Allocations: 6030)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 6126)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 8.8ms | Allocations: 9253)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bands", :id=>nil}, missing required keys: [:id]):
+    1: <form action="<%= band_url(@band) %>" method="POST" >
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" value="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:29:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 3.2ms | Allocations: 1145)
+  Rendered bands/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 6030)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 6126)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.8ms | Allocations: 9253)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bands", :id=>nil}, missing required keys: [:id]):
+    1: <form action="<%= band_url(@band) %>" method="POST" >
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" value="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:30:56 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 74)
+  Rendered bands/_delete_button.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered bands/_delete_button.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered bands/_delete_button.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered bands/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1257)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4571)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.4ms | Allocations: 5344)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:30:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 14:31:03 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.9ms | Allocations: 331)
+  Rendered bands/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1334)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 1420)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms | Allocations: 2122)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bands", :id=>nil}, missing required keys: [:id]):
+    1: <form action="<%= band_url(@band) %>" method="POST" >
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" value="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:31:50 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.4ms | Allocations: 536)
+  Rendered bands/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1538)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 1624)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms | Allocations: 2324)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bands"}, missing required keys: [:id]):
+    1: <form action="<%= band_url %>" method="POST" >
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" value="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:32:00 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 4.0ms | Allocations: 422)
+  Rendered bands/_delete_button.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1733)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 3007)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.9ms | Allocations: 3726)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:32:00 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started DELETE "/bands" for ::1 at 2022-09-20 14:32:04 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/bands"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 14:32:53 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 8.6ms | Allocations: 894)
+  Rendered bands/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1887)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 1972)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms | Allocations: 2664)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <form action="<%= band_url(@band.id) %>" method="POST" >
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" value="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:35:26 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 1.0ms | Allocations: 330)
+  Rendered bands/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1323)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 1408)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 2097)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bands", :id=>nil}, missing required keys: [:id]):
+    1: <form action="<%= band_url(@band) %>" method="POST" >
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" value="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:36:48 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 203)
+  Rendered bands/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 850)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 929)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 1143)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bands", :id=>nil}, missing required keys: [:id]):
+    1: <form action="<%= band_url(@band) %>" method="POST" >
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" value="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:37:03 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 2.9ms | Allocations: 858)
+  Rendered bands/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1851)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 1936)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 2603)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <form action="<%= band_url(@band.id) %>" method="POST" >
+    2: <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    3: <input type="hidden" name="_method" value="DELETE">
+    4: <input type="submit" value="remove band">
+  
+app/views/bands/_delete_button.html.erb:1
+app/views/bands/index.html.erb:6
+app/views/bands/index.html.erb:3
+app/controllers/bands_controller.rb:6:in `index'
+Started GET "/bands" for ::1 at 2022-09-20 14:37:19 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/_delete_button.html.erb (Duration: 3.4ms | Allocations: 418)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered bands/_delete_button.html.erb (Duration: 0.5ms | Allocations: 51)
+  Rendered bands/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1726)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 3000)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms | Allocations: 3718)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 14:37:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started DELETE "/bands" for ::1 at 2022-09-20 14:37:22 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/bands"):
+  

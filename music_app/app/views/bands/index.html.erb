@@ -1,0 +1,10 @@
+<h1>ALL BANDS</h1>
+<ol>
+    <% @bands.each do |band| %>
+    <li>
+        <%= band.name %> 
+        <%= render "delete_button"%>
+    </li>
+    <br>
+                    <% end %>
+</ol>
