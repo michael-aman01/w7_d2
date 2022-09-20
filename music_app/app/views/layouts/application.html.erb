@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+  <title>MusicApp</title>
+<div class="nav">
+  <% if logged_in? %>
+  <%= render 'shared/logout_button' %>
+
+  <% end %>
+</div>
+    <%= yield %>
+  </body>
+</html>
