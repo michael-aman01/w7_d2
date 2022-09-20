@@ -24,11 +24,14 @@ class BandsController < ApplicationController
     end
 
     def show
-        render json: @band
+        @albums = Album.where(band_id: @band.id)
+        render :show
     end
 
     def update
     end
+
+    
 
     def destroy
 
@@ -40,10 +43,6 @@ class BandsController < ApplicationController
 
     end
 
-
-    def set_band
-        @band = Band.find_by(id: params[:id])
-    end
 
 
 

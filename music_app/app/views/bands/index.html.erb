@@ -2,9 +2,9 @@
 <ol>
     <% @bands.each do |band| %>
     <li>
-        <%= band.name %> 
-        <%= render "delete_button"%>
+    <a href="<%= band_url(band)%>">  <%= band.name %>  </a> 
     </li>
+
     <br>
                     <% end %>
 </ol>

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :set_band, :current_user, :require_logged_in, :require_logged_out, :login, :logout, :logged_in?
+    helper_method :set_band, :current_user, :require_logged_in, :require_logged_out, :login, :logout, :logged_in?, :set_band
 
     def current_user
         @current_user ||= User.find_by(session_token: session[:session_token])
@@ -35,6 +35,12 @@ class ApplicationController < ActionController::Base
             redirect_to new_session_url
         end
     end
+
+
+    def set_band
+        @band = Band.find_by(id: params[:id])
+    end
+
 
 
 end

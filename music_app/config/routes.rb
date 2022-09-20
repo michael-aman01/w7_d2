@@ -8,4 +8,11 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :bands
 
+resources :bands, only: [:show] do
+    resources :albums, only: [:new]
+end
+
+  #get '/bands/:band_id/albums/new', to: "albums#new", as: 'new_album'
+  resources :albums, except: [:new, :index]
+
 end

@@ -8434,3 +8434,2309 @@ Started DELETE "/bands" for ::1 at 2022-09-20 14:37:22 -0700
   
 ActionController::RoutingError (No route matches [DELETE] "/bands"):
   
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4505726345591715405)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAlbum (20220920214037)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (70.6ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "studio_album?" boolean DEFAULT TRUE NOT NULL, "band_id" bigint NOT NULL, "title" character varying NOT NULL, "year" date NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_dd448a2456"
+FOREIGN KEY ("band_id")
+  REFERENCES "bands" ("id")
+)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_albums_on_band_id" ON "albums" ("band_id")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_albums_on_band_id_and_title" ON "albums" ("band_id", "title")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220920214037"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4505726345591715405)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/bands" for ::1 at 2022-09-20 15:15:40 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 4487)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 7999)
+Completed 200 OK in 112ms (Views: 35.0ms | ActiveRecord: 5.9ms | Allocations: 12306)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 15:15:40 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 15:17:31 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1033)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2521)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 3254)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 15:17:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 15:18:05 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1053)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 2542)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 1.0ms | Allocations: 3273)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 15:18:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 15:19:29 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1030)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2512)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.3ms | Allocations: 3242)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 15:19:29 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 15:19:59 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1016)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2514)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 3234)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 15:20:00 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 15:20:02 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (1.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.8ms | Allocations: 1714)
+
+
+  
+SyntaxError (/home/michael/Desktop/project/w7_d2/music_app/app/models/album.rb:20: syntax error, unexpected ':', expecting `end'
+        class_name: :Band,
+                  ^
+):
+  
+app/models/album.rb:20: syntax error, unexpected ':', expecting `end'
+app/models/album.rb:20: syntax error, unexpected ':', expecting `end'
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:20:34 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 5.1ms | Allocations: 5579)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.find_by(band_id: @band_id.id)
+                                                 ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:21:16 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1 LIMIT $2[0m  [["band_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 330)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 419)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 7.0ms | Allocations: 6453)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= @band.name %> Homepage </h1>
+<h2> Albums: </h2>
+<ol>
+    <% @albums.each do |album| %>
+    <li> <%= album.title %> </li>
+    <li> <%= album.year %> </li>
+    <li> <%= album.studio_album? == 'Studio album' ? 'Live album' %> </li>
+    <br>
+    <% end %>
+
+</ol>
+):
+1:    <h1><%= @band.name %> Homepage </h1>
+2:    <h2> Albums: </h2>
+3:    <ol>
+4:        <% @albums.each do |album| %>
+5:        <li> <%= album.title %> </li>
+6:        <li> <%= album.year %> </li>
+7:        <li> <%= album.studio_album? == 'Studio album' ? 'Live album' %> </li>
+8:        <br>
+9:        <% end %>
+10:    
+11:    </ol>
+  
+app/views/bands/show.html.erb:7: syntax error, unexpected ')', expecting ':'
+app/views/bands/show.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/bands/show.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/views/bands/show.html.erb:7: syntax error, unexpected ')', expecting ':'
+app/views/bands/show.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/bands/show.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/views/bands/show.html.erb:7: syntax error, unexpected ')', expecting ':'
+app/views/bands/show.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/bands/show.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/views/bands/show.html.erb:7: syntax error, unexpected ')', expecting ':'
+app/views/bands/show.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/bands/show.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/controllers/bands_controller.rb:28:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:22:13 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1 LIMIT $2[0m  [["band_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 998)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms | Allocations: 2718)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1><%= @band.name %> Homepage </h1>
+    2: <h2> Albums: </h2>
+    3: <ol>
+    4:     <% @albums.each do |album| %>
+    5:     <li> <%= album.title %> </li>
+    6:     <li> <%= album.year %> </li>
+    7:     <li> <%= album.studio_album? == true ? 'Studio album' : 'Live album' %> </li>
+  
+app/views/bands/show.html.erb:4
+app/controllers/bands_controller.rb:28:in `show'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (5020.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_app_development"[0m
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" ORDER BY "bands"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" ORDER BY "bands"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."title" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["title", "album1"], ["title", "album1"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAlbum Create (1.2ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "album1"], ["year", 1990], ["created_at", "2022-09-20 22:25:58.980631"], ["updated_at", "2022-09-20 22:25:58.980631"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."title" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["title", "album1"], ["title", "album1"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAlbum Create (0.6ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "album1"], ["year", 0], ["created_at", "2022-09-20 22:26:10.376713"], ["updated_at", "2022-09-20 22:26:10.376713"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."title" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["title", "album1"], ["title", "album1"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAlbum Create (0.8ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "album1"], ["year", "1990-01-01"], ["created_at", "2022-09-20 22:26:37.635366"], ["updated_at", "2022-09-20 22:26:37.635366"]]
+  [1m[36mTRANSACTION (58.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."title" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["title", "album2"], ["title", "album2"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAlbum Create (0.4ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "album2"], ["year", "1990-01-01"], ["created_at", "2022-09-20 22:26:44.269467"], ["updated_at", "2022-09-20 22:26:44.269467"]]
+  [1m[36mTRANSACTION (58.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."title" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["title", "album3"], ["title", "album3"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAlbum Create (1.1ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "album3"], ["year", "1990-01-01"], ["created_at", "2022-09-20 22:26:48.997551"], ["updated_at", "2022-09-20 22:26:48.997551"]]
+  [1m[36mTRANSACTION (58.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."title" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["title", "album3"], ["title", "album3"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" ORDER BY "bands"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" ORDER BY "bands"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 4], ["title", "album3"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAlbum Create (2.1ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 4], ["title", "album3"], ["year", "1990-01-01"], ["created_at", "2022-09-20 22:28:14.195422"], ["updated_at", "2022-09-20 22:28:14.195422"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 4], ["title", "album3"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "album3"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "new album"], ["LIMIT", 1]]
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAlbum Create (0.3ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "new album"], ["year", "1990-01-01"], ["created_at", "2022-09-20 22:28:36.968237"], ["updated_at", "2022-09-20 22:28:36.968237"]]
+  [1m[36mTRANSACTION (59.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/bands/3" for ::1 at 2022-09-20 15:28:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1 LIMIT $2[0m  [["band_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 5870)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5980)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 11.3ms | Allocations: 20557)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Album id: 1, studio_album?: true, band_id: 3, title: "album1", year: "1990-01-01", created_at: "2022-09-20 22:26:37.635366000 +0000", updated_at: "2022-09-20 22:26:37.635366000 +0000">):
+    1: <h1><%= @band.name %> Homepage </h1>
+    2: <h2> Albums: </h2>
+    3: <ol>
+    4:     <% @albums.each do |album| %>
+    5:     <li> <%= album.title %> </li>
+    6:     <li> <%= album.year %> </li>
+    7:     <li> <%= album.studio_album? == true ? 'Studio album' : 'Live album' %> </li>
+  
+app/views/bands/show.html.erb:4
+app/controllers/bands_controller.rb:28:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:29:30 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1 LIMIT $2[0m  [["band_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 13.7ms | Allocations: 4470)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4550)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.2ms | Allocations: 5830)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Album id: 1, studio_album?: true, band_id: 3, title: "album1", year: "1990-01-01", created_at: "2022-09-20 22:26:37.635366000 +0000", updated_at: "2022-09-20 22:26:37.635366000 +0000">):
+    1: <h1><%= @band.name %> Homepage </h1>
+    2: <h2> Albums: </h2>
+    3: <ol>
+    4:     <% @albums.each do |album| %>
+    5:     <li> <%= album.title %> </li>
+    6:     <li> <%= album.year %> </li>
+    7:     <li> <%= album.studio_album? == true ? 'Studio album' : 'Live album' %> </li>
+  
+app/views/bands/show.html.erb:4
+app/controllers/bands_controller.rb:28:in `show'
+Started GET "/styles.css" for ::1 at 2022-09-20 15:32:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands/4" for ::1 at 2022-09-20 15:32:25 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1 LIMIT $2[0m  [["band_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 4529)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4618)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 10.0ms | Allocations: 11999)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Album id: 4, studio_album?: true, band_id: 4, title: "album3", year: "1990-01-01", created_at: "2022-09-20 22:28:14.195422000 +0000", updated_at: "2022-09-20 22:28:14.195422000 +0000">):
+    1: <h1><%= @band.name %> Homepage </h1>
+    2: <h2> Albums: </h2>
+    3: <ol>
+    4:     <% @albums.each do |album| %>
+    5:     <li> <%= album.title %> </li>
+    6:     <li> <%= album.year %> </li>
+    7:     <li> <%= album.studio_album? == true ? 'Studio album' : 'Live album' %> </li>
+  
+app/views/bands/show.html.erb:4
+app/controllers/bands_controller.rb:28:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:33:43 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.9ms | Allocations: 7780)
+
+
+  
+NoMethodError (undefined method `find_all_by' for Album:Class
+Did you mean?  find_sole_by):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:35:05 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:4
+  Rendered bands/show.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2389)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 5685)
+Completed 200 OK in 45ms (Views: 18.1ms | ActiveRecord: 7.4ms | Allocations: 10921)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:35:05 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1515)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/4" for ::1 at 2022-09-20 15:35:10 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 4]]
+  ↳ app/views/bands/show.html.erb:4
+  Rendered bands/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 598)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 1687)
+Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 1.2ms | Allocations: 2483)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:35:10 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 1445)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/4" for ::1 at 2022-09-20 15:37:05 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 4]]
+  ↳ app/views/bands/show.html.erb:4
+  Rendered bands/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2418)
+Completed 200 OK in 23ms (Views: 15.4ms | ActiveRecord: 1.2ms | Allocations: 3639)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:37:05 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 1494)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:37:18 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:4
+  Rendered bands/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 1760)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 1.1ms | Allocations: 2557)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:37:18 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 1445)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:37:29 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1445)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:37:33 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:4
+  Rendered bands/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 1753)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 2493)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:37:33 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1445)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:37:53 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:4
+  Rendered bands/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 1756)
+Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 1.3ms | Allocations: 2496)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:37:53 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 1445)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums" for ::1 at 2022-09-20 15:38:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 15:38:09 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:4
+  Rendered bands/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 1771)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.6ms | Allocations: 2511)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:38:09 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1445)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:38:20 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1445)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:41:32 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 15.0ms | Allocations: 4452)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 4562)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 13.0ms | Allocations: 15523)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_album_url' for #<ActionView::Base:0x00000000005000>
+Did you mean?  new_album_url_url
+               edit_album_url):
+    1: <h1><%= @band.name %> Homepage </h1>
+    2: 
+    3: <a href="<%= new_album_url %>">Add Album </a>
+    4: <h2> Albums: </h2>
+    5: <ol>
+    6:     <% @albums.each do |album| %>
+  
+app/views/bands/show.html.erb:3
+app/controllers/bands_controller.rb:28:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:44:05 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 17.3ms | Allocations: 3222)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 3311)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.5ms | Allocations: 4646)
+
+
+  
+ActionView::Template::Error (undefined method `new_album_url' for #<ActionView::Base:0x00000000005208>
+Did you mean?  new_album_url_url
+               edit_album_url):
+    1: <h1><%= @band.name %> Homepage </h1>
+    2: 
+    3: <a href="<%= new_album_url(@band) %>">Add Album </a>
+    4: <h2> Albums: </h2>
+    5: <ol>
+    6:     <% @albums.each do |album| %>
+  
+app/views/bands/show.html.erb:3
+app/controllers/bands_controller.rb:28:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 15:47:46 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 556)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3585)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 0.3ms | Allocations: 5110)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 15:47:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 15:49:32 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 12.5ms | Allocations: 4339)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 7852)
+Completed 200 OK in 74ms (Views: 36.8ms | ActiveRecord: 11.4ms | Allocations: 18874)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:49:32 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms | Allocations: 1642)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 15:49:35 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 470)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1590)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.6ms | Allocations: 3094)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 15:49:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:49:40 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 1573)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 15:49:44 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 239)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1271)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 2223)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 15:49:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 15:50:37 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 455)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 1714)
+Completed 200 OK in 16ms (Views: 7.9ms | ActiveRecord: 0.7ms | Allocations: 3043)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 15:50:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 15:50:55 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-05", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+No template found for AlbumsController#create, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.2ms | Allocations: 1291)
+
+
+Started POST "/albums" for ::1 at 2022-09-20 15:51:00 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-05", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+No template found for AlbumsController#create, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms | Allocations: 903)
+
+
+Started POST "/albums" for ::1 at 2022-09-20 15:51:01 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-05", "studio_album?"=>"true"}}
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+No template found for AlbumsController#create, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 1.0ms | Allocations: 922)
+
+
+Started POST "/albums" for ::1 at 2022-09-20 15:51:01 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-05", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+No template found for AlbumsController#create, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 0.6ms | Allocations: 882)
+
+
+Started GET "/bands/3" for ::1 at 2022-09-20 15:51:20 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1004)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2344)
+Completed 200 OK in 14ms (Views: 8.0ms | ActiveRecord: 1.3ms | Allocations: 3427)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:51:20 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 1494)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 15:51:24 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 238)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 1177)
+Completed 200 OK in 17ms (Views: 8.3ms | ActiveRecord: 0.7ms | Allocations: 2065)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 15:51:24 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started GET "/bands" for ::1 at 2022-09-20 15:52:02 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 1987)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 2261)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 15:52:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 15:52:05 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 661)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 1764)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 1.0ms | Allocations: 2504)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:52:05 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1445)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 15:55:07 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2385)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3739)
+Completed 200 OK in 38ms (Views: 12.8ms | ActiveRecord: 11.2ms | Allocations: 8946)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:55:08 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms | Allocations: 1503)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 15:55:09 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 312)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1431)
+Completed 200 OK in 17ms (Views: 9.3ms | ActiveRecord: 0.7ms | Allocations: 2806)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 15:55:09 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 15:55:15 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms | Allocations: 1079)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0..1)):
+  
+app/controllers/albums_controller.rb:9:in `create'
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 15:55:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 15:56:30 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.9ms | Allocations: 6495)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @album.band_id = @band.id
+                              ^^^):
+  
+app/controllers/albums_controller.rb:10:in `create'
+Started POST "/albums" for ::1 at 2022-09-20 15:56:55 -0700
+  
+SyntaxError (/home/michael/Desktop/project/w7_d2/music_app/app/controllers/albums_controller.rb:10: syntax error, unexpected '\n', expecting =>
+...      @album.band_id = @band.id
+...                               ^
+):
+  
+app/controllers/albums_controller.rb:10: syntax error, unexpected '\n', expecting =>
+app/controllers/albums_controller.rb:10: syntax error, unexpected '\n', expecting =>
+Started POST "/albums" for ::1 at 2022-09-20 15:57:28 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-19", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mAlbum Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1221)
+Completed 200 OK in 55ms (Views: 8.6ms | ActiveRecord: 7.4ms | Allocations: 11256)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 15:57:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 15:58:28 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 16.5ms | Allocations: 2404)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 3749)
+Completed 200 OK in 46ms (Views: 21.5ms | ActiveRecord: 9.4ms | Allocations: 8957)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 15:58:29 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1504)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 15:58:31 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 306)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1420)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 2794)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 15:58:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 15:58:39 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-06", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mAlbum Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 987)
+Completed 200 OK in 17ms (Views: 3.3ms | ActiveRecord: 1.0ms | Allocations: 4545)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 15:58:39 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 15:59:23 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-01", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mAlbum Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+Completed 200 OK in 42ms (Views: 0.8ms | ActiveRecord: 6.8ms | Allocations: 11037)
+
+
+Started POST "/albums" for ::1 at 2022-09-20 16:01:17 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-01", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.1ms | Allocations: 4326)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @album = Album.new(title: params[:album][:title], year: params[:album][:year], studio_album?: params[:album][:studio_album?],band_id: @band.id)
+                                                                                                                                                   ^^^):
+  
+app/controllers/albums_controller.rb:9:in `create'
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:01:27 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:01:29 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-06", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 1939)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @album = Album.new(title: params[:album][:title], year: params[:album][:year], studio_album?: params[:album][:studio_album?],band_id: @band.id)
+                                                                                                                                                   ^^^):
+  
+app/controllers/albums_controller.rb:9:in `create'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:01:36 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 316)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1435)
+Completed 200 OK in 29ms (Views: 7.4ms | ActiveRecord: 9.7ms | Allocations: 4715)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:01:36 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:01:48 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-01", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 1964)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @album = Album.new(title: params[:album][:title], year: params[:album][:year], studio_album?: params[:album][:studio_album?],band_id: @band.id)
+                                                                                                                                                   ^^^):
+  
+app/controllers/albums_controller.rb:9:in `create'
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:02:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:02:36 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-01", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mAlbum Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 6.8ms | Allocations: 9030)
+
+
+Started POST "/albums" for ::1 at 2022-09-20 16:05:33 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-01", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mAlbum Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 8970)
+
+
+Started GET "/albums/new" for ::1 at 2022-09-20 16:05:41 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.2ms | Allocations: 951)
+
+
+  
+ActionController::MissingExactTemplate (AlbumsController#show is missing a template for request formats: text/html):
+  
+actionpack (7.0.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:107:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/albums" for ::1 at 2022-09-20 16:06:49 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/albums"):
+  
+Started GET "/albums/new" for ::1 at 2022-09-20 16:06:58 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.2ms | Allocations: 722)
+
+
+  
+ActionController::MissingExactTemplate (AlbumsController#show is missing a template for request formats: text/html):
+  
+actionpack (7.0.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:107:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/albums" for ::1 at 2022-09-20 16:07:12 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-01", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mAlbum Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 3738)
+
+
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:07:48 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 847)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 935)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms | Allocations: 2271)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1><%= @band.name %></h1>
+    2: <form action="<%= albums_url %>" method="POST">
+    3:     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+    4: 
+  
+app/views/albums/new.html.erb:1
+app/controllers/albums_controller.rb:5:in `new'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:08:25 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mCACHE Band Load (0.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 683)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 771)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.1ms | Allocations: 7012)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1><%= @band.name %></h1>
+    2: <form action="<%= albums_url %>" method="POST">
+    3:     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+    4: 
+  
+app/views/albums/new.html.erb:1
+app/controllers/albums_controller.rb:7:in `new'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:09:19 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mCACHE Band Load (0.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:5:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 683)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 771)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.8ms | Allocations: 7000)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1><%= @band.name %></h1>
+    2: <form action="<%= albums_url %>" method="POST">
+    3:     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+    4: 
+  
+app/views/albums/new.html.erb:1
+app/controllers/albums_controller.rb:7:in `new'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:09:23 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mCACHE Band Load (0.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:5:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 659)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 738)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms | Allocations: 2244)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1><%= @band.name %></h1>
+    2: <form action="<%= albums_url %>" method="POST">
+    3:     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+    4: 
+  
+app/views/albums/new.html.erb:1
+app/controllers/albums_controller.rb:7:in `new'
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:09:28 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1824)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands" for ::1 at 2022-09-20 16:09:36 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1989)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 3504)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 2.8ms | Allocations: 4089)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 16:09:36 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 16:09:39 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 895)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2001)
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 1.6ms | Allocations: 2941)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:09:39 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1473)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3" for ::1 at 2022-09-20 16:11:26 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2385)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 3730)
+Completed 200 OK in 45ms (Views: 13.1ms | ActiveRecord: 11.8ms | Allocations: 8938)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:11:27 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1503)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:11:28 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 1714)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @album = Album.new(band_id: @band.id)
+                                         ^^^):
+  
+app/controllers/albums_controller.rb:6:in `new'
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:11:35 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1455)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:14:10 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 684)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 772)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 6.4ms | Allocations: 6452)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1><%= @band.name %></h1>
+    2: <form action="<%= albums_url %>" method="POST">
+    3:     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+    4: 
+  
+app/views/albums/new.html.erb:1
+app/controllers/albums_controller.rb:7:in `new'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:14:22 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 468)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 1737)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 0.7ms | Allocations: 3222)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:14:22 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:19:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"", "studio_album?"=>"true or false"}}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+Completed 200 OK in 50ms (Views: 0.4ms | ActiveRecord: 8.0ms | Allocations: 18194)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:19:21 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:19:28 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-12", "studio_album?"=>"true"}}
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 4041)
+
+
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:19:36 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 494)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3497)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 4884)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:19:36 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:20:33 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.2ms | Allocations: 4160)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:20:35 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1457)
+Completed 200 OK in 25ms (Views: 7.4ms | ActiveRecord: 6.1ms | Allocations: 4995)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:20:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:20:46 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"title"=>"another album", "year"=>"2022-09-07", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 4329)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:20:49 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:21:22 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 463)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 1729)
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.4ms | Allocations: 3073)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:21:22 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:23:26 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 478)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1745)
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 3243)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:23:26 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:23:33 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"3"=>"", "title"=>"another album", "year"=>"2022-09-08", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 3933)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:24:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:24:32 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 480)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1747)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 3050)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:24:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:24:40 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album", "year"=>"2022-09-14", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" IS NULL AND "albums"."title" = $1 LIMIT $2[0m  [["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+Completed 200 OK in 42ms (Views: 0.6ms | ActiveRecord: 3.4ms | Allocations: 3927)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:25:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:25:32 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album", "year"=>"2022-09-14", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Create (0.7ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "another album"], ["year", "2022-09-14"], ["created_at", "2022-09-20 23:25:32.901459"], ["updated_at", "2022-09-20 23:25:32.901459"]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 12.4ms | Allocations: 12720)
+
+
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:26:23 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 1454)
+Completed 200 OK in 21ms (Views: 7.3ms | ActiveRecord: 4.1ms | Allocations: 7128)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:26:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:26:32 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 2", "year"=>"2022-09-07", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 2"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Create (1.3ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "another album 2"], ["year", "2022-09-07"], ["created_at", "2022-09-20 23:26:32.841434"], ["updated_at", "2022-09-20 23:26:32.841434"]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 9.1ms | Allocations: 6422)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"bands", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/albums_controller.rb:13:in `create'
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:26:39 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:26:52 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 2", "year"=>"2022-09-07", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 2"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 9.0ms | Allocations: 10699)
+
+
+Started POST "/albums" for ::1 at 2022-09-20 16:26:57 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 4", "year"=>"2022-09-07", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 4"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Create (1.0ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "another album 4"], ["year", "2022-09-07"], ["created_at", "2022-09-20 23:26:57.763180"], ["updated_at", "2022-09-20 23:26:57.763180"]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+Redirected to http://localhost:3000/bands/3
+Completed 302 Found in 33ms (ActiveRecord: 8.1ms | Allocations: 4731)
+
+
+Started GET "/bands/3" for ::1 at 2022-09-20 16:26:57 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 19.5ms | Allocations: 3209)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 3297)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.5ms | Allocations: 4740)
+
+
+  
+ActionView::Template::Error (undefined method `new_album_url' for #<ActionView::Base:0x0000000000d020>
+Did you mean?  edit_album_url):
+    1: <h1><%= @band.name %> Homepage </h1>
+    2: 
+    3: <a href="<%= new_album_url(@band) %>">Add Album </a>
+    4: <h2> Albums: </h2>
+    5: <ol>
+    6:     <% @albums.each do |album| %>
+  
+app/views/bands/show.html.erb:3
+app/controllers/bands_controller.rb:28:in `show'
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:27:10 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 1522)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:27:12 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 1432)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 2609)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:27:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:27:38 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 5", "year"=>"2022-09-08", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 5"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Create (0.5ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "another album 5"], ["year", "2022-09-08"], ["created_at", "2022-09-20 23:27:38.232113"], ["updated_at", "2022-09-20 23:27:38.232113"]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 12.3ms | Allocations: 10977)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"bands", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/albums_controller.rb:13:in `create'
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:27:41 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:28:01 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 5", "year"=>"2022-09-08", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 5"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+Completed 200 OK in 46ms (Views: 0.3ms | ActiveRecord: 10.4ms | Allocations: 10632)
+
+
+Started POST "/albums" for ::1 at 2022-09-20 16:28:06 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 6", "year"=>"2022-09-08", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 6"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Create (1.4ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "another album 6"], ["year", "2022-09-08"], ["created_at", "2022-09-20 23:28:06.552283"], ["updated_at", "2022-09-20 23:28:06.552283"]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 48ms (ActiveRecord: 6.4ms | Allocations: 4662)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 16:28:06 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1035)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2397)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.6ms | Allocations: 3051)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 16:28:06 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 16:28:09 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (Duration: 15.9ms | Allocations: 2996)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 3075)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms | Allocations: 4006)
+
+
+  
+ActionView::Template::Error (undefined method `new_album_url' for #<ActionView::Base:0x00000000010c48>
+Did you mean?  edit_album_url):
+    1: <h1><%= @band.name %> Homepage </h1>
+    2: 
+    3: <a href="<%= new_album_url(@band) %>">Add Album </a>
+    4: <h2> Albums: </h2>
+    5: <ol>
+    6:     <% @albums.each do |album| %>
+  
+app/views/bands/show.html.erb:3
+app/controllers/bands_controller.rb:28:in `show'
+Started GET "/styles.css" for ::1 at 2022-09-20 16:28:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 16:29:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (1.9ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4404)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 7908)
+Completed 200 OK in 72ms (Views: 28.7ms | ActiveRecord: 13.6ms | Allocations: 18929)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:29:33 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.1ms | Allocations: 1644)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:29:35 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 482)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 1602)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 3151)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:29:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:29:44 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 7", "year"=>"2022-09-08", "studio_album?"=>"true"}}
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 7"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mBand Load (1.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Create (1.6ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "another album 7"], ["year", "2022-09-08"], ["created_at", "2022-09-20 23:29:44.320952"], ["updated_at", "2022-09-20 23:29:44.320952"]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 82ms (ActiveRecord: 9.8ms | Allocations: 8096)
+
+
+Started GET "/bands" for ::1 at 2022-09-20 16:29:44 -0700
+Processing by BandsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 904)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 2165)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.8ms | Allocations: 2506)
+
+
+Started GET "/styles.css" for ::1 at 2022-09-20 16:29:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+Started GET "/bands/3" for ::1 at 2022-09-20 16:29:52 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 742)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 1834)
+Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 1.1ms | Allocations: 2606)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:29:52 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 1476)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:30:56 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 339)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1458)
+Completed 200 OK in 18ms (Views: 3.4ms | ActiveRecord: 4.0ms | Allocations: 7201)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:30:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:31:06 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 8", "year"=>"2022-09-08", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 8"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mAlbum Create (1.0ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "another album 8"], ["year", "2022-09-08"], ["created_at", "2022-09-20 23:31:06.639608"], ["updated_at", "2022-09-20 23:31:06.639608"]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+Redirected to http://localhost:3000/bands/3
+Completed 302 Found in 40ms (ActiveRecord: 7.0ms | Allocations: 6913)
+
+
+Started GET "/bands/3" for ::1 at 2022-09-20 16:31:06 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 945)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 2287)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 0.9ms | Allocations: 3515)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:31:06 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1505)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" ORDER BY "albums"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:36:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/michael/Desktop/project/w7_d2/music_app/app/controllers/albums_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/albums_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/albums_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:37:02 -0700
+  
+SyntaxError (/home/michael/Desktop/project/w7_d2/music_app/app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:37:03 -0700
+  
+SyntaxError (/home/michael/Desktop/project/w7_d2/music_app/app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:37:07 -0700
+  
+SyntaxError (/home/michael/Desktop/project/w7_d2/music_app/app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/albums_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/bands/3/albums/new" for ::1 at 2022-09-20 16:37:24 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"3"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 574)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 3595)
+Completed 200 OK in 66ms (Views: 21.5ms | ActiveRecord: 9.2ms | Allocations: 14528)
+
+
+Started GET "/bands/3/albums/styles.css" for ::1 at 2022-09-20 16:37:24 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/bands/3/albums/styles.css"):
+  
+Started POST "/albums" for ::1 at 2022-09-20 16:37:37 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 9", "year"=>"2022-09-10", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 1208)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/albums_controller.rb:39:in `album_params'
+app/controllers/albums_controller.rb:11:in `create'
+Started POST "/albums" for ::1 at 2022-09-20 16:37:55 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "album"=>{"band_id"=>"3", "title"=>"another album 9", "year"=>"2022-09-10", "studio_album?"=>"true"}}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "albums" WHERE "albums"."band_id" = $1 AND "albums"."title" = $2 LIMIT $3[0m  [["band_id", 3], ["title", "another album 9"], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mAlbum Create (0.6ms)[0m  [1m[32mINSERT INTO "albums" ("studio_album?", "band_id", "title", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["studio_album?", true], ["band_id", 3], ["title", "another album 9"], ["year", "2022-09-10"], ["created_at", "2022-09-20 23:37:55.765044"], ["updated_at", "2022-09-20 23:37:55.765044"]]
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:13:in `create'
+Redirected to http://localhost:3000/bands/3
+Completed 302 Found in 37ms (ActiveRecord: 7.5ms | Allocations: 15016)
+
+
+Started GET "/bands/3" for ::1 at 2022-09-20 16:37:55 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+  Rendering layout layouts/application.html.erb
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 3]]
+  ↳ app/views/bands/show.html.erb:6
+  Rendered bands/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1190)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2556)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 1.7ms | Allocations: 3876)
+
+
+Started GET "/bands/styles.css" for ::1 at 2022-09-20 16:37:55 -0700
+Processing by BandsController#show as CSS
+  Parameters: {"id"=>"styles"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41:in `set_band'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms | Allocations: 1575)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+        @albums = Album.where(band_id: @band.id)
+                                            ^^^):
+  
+app/controllers/bands_controller.rb:27:in `show'
