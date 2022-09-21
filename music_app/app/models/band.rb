@@ -13,6 +13,7 @@ class Band < ApplicationRecord
     has_many :albums,
         class_name: :Album,
         foreign_key: :band_id,
+        dependent: :destroy,
         inverse_of: :band
 
     def self.find_by_name(name)

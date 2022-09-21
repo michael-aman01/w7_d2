@@ -7,7 +7,7 @@ class BandsController < ApplicationController
     end
 
     def create
-        @band = Band.new(name: params[:name])
+        @band = Band.new(band_params)
         if @band && @band.save
             redirect_to bands_url
         else
@@ -41,6 +41,11 @@ class BandsController < ApplicationController
             render json: "NO BAND"
         end
 
+    end
+
+    private
+    def band_params
+        params.require(:band).permit(:name)
     end
 
 

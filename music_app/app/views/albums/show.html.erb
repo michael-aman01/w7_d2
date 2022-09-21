@@ -1,0 +1,5 @@
+<h1><%= @album.title %> </h1>
+<h3> Artist: <%= @album.band.name %> </h3>
+<h3> Released: <%= @album.year %> </h3>
+<h3> Studio/Live Recording: <%= @album.studio_album? == true ? "studio" : "live" %> </h3>
+<a href="<%= band_url(@album.band) %>">back to arist </a>

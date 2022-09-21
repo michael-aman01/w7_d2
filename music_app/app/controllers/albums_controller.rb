@@ -23,11 +23,15 @@ class AlbumsController < ApplicationController
     end
 
     def show
-        
+        @album = Album.find_by(id: params[:id])
+        if @album
+            render :show
+        else
+            redirect_to band_url(@album.band) #check this
+        end
     end
 
     def update(album)
-        
         if album.update
             redirect_to album_url(album) 
         end
